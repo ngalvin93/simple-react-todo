@@ -30,11 +30,18 @@ function App() {
     ]
   }
 
-  console.log(state.todos)
+  const markComplete = (id) => {
+    this.setState({ todos: this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo
+    })})
+  }
 
   return (
     <div className="App">
-      <Todos todos={state.todos}/>
+      <Todos todos={state.todos} markComplete={ markComplete } />
     </div>
   );
 }

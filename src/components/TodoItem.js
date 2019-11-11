@@ -11,9 +11,14 @@ function TodoItem (props) {
         }
     }
 
+    const { id, title } = props.todo
+
     return (
         <div style= {getStyle()}>
-            <p>{ props.todo.title }</p>
+            <p>
+                <input type="checkbox" onChange={ props.markComplete.bind(this, id) } /> {' '}
+                { title }
+            </p> 
         </div>
     )
 }

@@ -3,9 +3,10 @@ import TodoItem from './TodoItem'
 import PropTypes from 'prop-types'
 
 function Todos(props) {
+
     return (
         props.todos.map(todo => (
-        <p>< TodoItem key={todo.id} todo= {todo} /></p>
+        <p>< TodoItem key={ todo.id } todo= { todo } markComplete={ props.markComplete } /></p>
         ))
     );
 }
